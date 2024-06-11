@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق JavaScript بسيط</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            position: relative;
+            color: #000000; /* Light mode text color */
+        }
+
+        /* Light mode background image */
+        body.light-mode {
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyp_JmCrrQwaV0vMzhaPRdGvHI3fLgLon8ug&usqp=CAU);
+        }
+
+        /* Dark mode background image */
+        body.dark-mode {
+            background: url(https://i.postimg.cc/DZzVWrHP/6f916c5da5676e4f597270785afed5b2.jpg);
+            color: #ffffff; /* Dark mode text color */
+        }
+
+        /* Add any additional CSS styles here */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #e08012;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0f0175;
+        }
+
+        #greetingMessage {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Dark mode settings */
+        .container.dark-mode .header,
+        .container.dark-mode .w_cont,
+        .container.dark-mode .time_c,
+        .container.dark-mode .humidity,
+        .container.dark-mode .s_header,
+        .container.dark-mode .close_s {
+            background: rgba(0, 0, 0, .4);
+        }
+
+        .container.dark-mode .close_s {
+            background: red;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="container" id="container">
+        <h1><span id="letterG" style="color:#0083ff;">G</span><span id="letterO" style="color:#ff0003;">o</span><span id="letterO2" style="color:#0000ff;">o</span><span id="letterG2" style="color:#ffaa00;">g</span><span id="letterL" style="color:#ff00ff;">l</span><span id="letterE" style="color:#00ffff;">e</span></h1>
+        <p></p>
+        <input type="text" id="nameInput">
+        <button onclick="displayGreeting()">البحث</button>
+        <p id="greetingMessage"></p>
+        <button onclick="toggleDarkMode()">فاتح</button>
+    </div>
+
+    <script>
+        function displayGreeting() {
+            var name = document.getElementById("nameInput").value;
+            
+            if (name) {
+                document.getElementById("greetingMessage").innerText = name + " مرحبا بك في موقع عموري بيك";
+            } else {
+                
+            }
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
